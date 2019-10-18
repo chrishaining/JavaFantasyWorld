@@ -64,28 +64,28 @@ public abstract class Person implements IAttack, IDefend, ILoseHealth {
     // if attack power = defend power, health is unaffected (or the item power could be reduced by attack power)
     // return a string appropriate to the outcome - Ha! Your attack had no effect! / Your attack has wounded me, but I'm not dead yet. / Aaagh! You have defeated me!
 
-    public String defend(int damage) {
-        if (this.item.getType() == "Defend") {
-            return this.item.getType();
-        }
-        else return "Not a defender";
-    }
-
-
 //    public String defend(int damage) {
 //        if (this.item.getType() == "Defend") {
-//            if (this.item.getPower() >= damage) {
-//                return String.format("Ha! Your attack had not effect! My %s overcomes your weapon.", this.getItem());
-//            } else if (this.item.getPower() < damage) {
-//                this.health -= (damage - this.item.getPower());
-//                if (this.health > 0) {
-//                    return "Your attack has wounded me, but I'm not dead yet.";
-//                } else {
-//                    return "Aaagh! I die, but I will come back to haunt thee!";
-//                }
-//            }
-//        } return "ooooo";
+//            return this.item.getType();
+//        }
+//        else return "Not a defender";
 //    }
+
+
+    public String defend(int damage) {
+        if (this.item.getType() == "Defend") {
+            if (this.item.getPower() >= damage) {
+                return String.format("Ha! Your attack had no effect! My %s overcomes your weapon.", this.getItem().getClass().getSimpleName());
+            } else if (this.item.getPower() < damage) {
+                this.health -= (damage - this.item.getPower());
+                if (this.health > 0) {
+                    return "Your attack has wounded me, but I'm not dead yet.";
+                } else {
+                    return "Aaagh! I die, but I will come back to haunt thee!";
+                }
+            }
+        } return "ooooo";
+    }
 //        public void loseHealth(int damage) {
 //            this.health -= damage;
 //        }

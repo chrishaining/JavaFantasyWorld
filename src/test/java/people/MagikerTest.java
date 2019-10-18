@@ -79,4 +79,23 @@ public class MagikerTest {
         magiker.defend(3);
         assertEquals(5, magiker.getHealth());
     }
+
+    @Test
+    public void canDefendAgainstAttackIfItemIsDefenderAndShowStringUnharmed() {
+        magiker.setItem(shield);
+//        magiker.defend(3);
+        assertEquals( "Ha! Your attack had no effect! My Shield overcomes your weapon.", magiker.defend(3));
+    }
+
+    @Test
+    public void canDefendAgainstAttackIfItemIsDefenderAndShowStringWounded() {
+        magiker.setItem(shield);
+        assertEquals( "Your attack has wounded me, but I'm not dead yet.", magiker.defend(6));
+    }
+
+    @Test
+    public void canDefendAgainstAttackIfItemIsDefenderAndShowStringKilled() {
+        magiker.setItem(shield);
+        assertEquals( "Aaagh! I die, but I will come back to haunt thee!", magiker.defend(11));
+    }
 }
