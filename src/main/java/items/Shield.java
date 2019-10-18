@@ -1,14 +1,9 @@
 package items;
 
-public class Shield extends Item {
+public class Shield extends DefenceItem {
 
-    private String action;
     public Shield(int power) {
         super(power);
-        this.action = "defend";
     }
 
-    public String getAction() {
-        return action;
-    }
 }

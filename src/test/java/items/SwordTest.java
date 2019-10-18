@@ -20,7 +20,8 @@ public class SwordTest {
     }
 
     @Test
-    public void getAction() {
-        assertEquals("attack", sword.getAction());
+    public void canGetType() {
+        assertEquals("Attack", sword.getType());
     }
+
 }

@@ -67,16 +67,16 @@ public class MagikerTest {
 //        assertEquals("I defend with my " + shield + ".", magiker.defend());
 //    }
 
-    @Test
-    public void canLoseHealth() {
-        magiker.loseHealth(3);
-        assertEquals(2, magiker.getHealth());
-    }
+//    @Test
+//    public void canLoseHealth() {
+//        magiker.loseHealth(3);
+//        assertEquals(2, magiker.getHealth());
+//    }
 
     @Test
     public void canDefendAgainstAttackIfItemIsDefender() {
-        magiker.loseHealth(3);
-        magiker.defend(shield);
+        magiker.setItem(shield);
+        magiker.defend(3);
         assertEquals(5, magiker.getHealth());
     }
 }
