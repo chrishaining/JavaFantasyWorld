@@ -18,4 +18,9 @@ public class SwordTest {
     public void hasPower() {
         assertEquals(3, sword.getPower());
     }
+
+    @Test
+    public void getAction() {
+        assertEquals("attack", sword.getAction());
+    }
 }

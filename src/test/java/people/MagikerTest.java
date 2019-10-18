@@ -33,6 +33,10 @@ public class MagikerTest {
     }
 
     @Test
+    public void healthStartsAt5() {
+        assertEquals(5, magiker.getHealth());
+    }
+    @Test
     public void canSetItem() {
         magiker.setItem(sword);
         assertEquals(sword, magiker.getItem());
@@ -43,5 +47,36 @@ public class MagikerTest {
         magiker.setItem(sword);
         magiker.setItem(shield);
         assertEquals(shield, magiker.getItem());
+    }
+
+    @Test
+    public void canAttack() {
+        magiker.setItem(sword);
+        assertEquals("I attack thee with my " + sword + "!", magiker.attack());
+    }
+
+    @Test
+    public void canAccessItemPower() {
+        magiker.setItem(shield);
+        assertEquals(4, magiker.getItemPower());
+    }
+
+//    @Test
+//    public void canDefend() {
+//        magiker.setItem(shield);
+//        assertEquals("I defend with my " + shield + ".", magiker.defend());
+//    }
+
+    @Test
+    public void canLoseHealth() {
+        magiker.loseHealth(3);
+        assertEquals(2, magiker.getHealth());
+    }
+
+    @Test
+    public void canDefendAgainstAttackIfItemIsDefender() {
+        magiker.loseHealth(3);
+        magiker.defend(shield);
+        assertEquals(5, magiker.getHealth());
     }
 }
