@@ -5,8 +5,8 @@ import weapons.Weapon;
 
 public abstract class Person implements IFight {
 
-    public String name;
-    public Weapon weapon;
+    private String name;
+    private Weapon weapon;
 
     public Person(String name) {
         this.name = name;
