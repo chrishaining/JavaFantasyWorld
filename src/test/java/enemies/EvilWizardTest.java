@@ -35,7 +35,7 @@ public class EvilWizardTest {
 
     @Test
     public void canFight() {
-        assertEquals("You dare to challenge me! You've just been EvilWizard-ed with a power level of 1.", evilWizard.fight());
+        assertEquals("You dare to challenge me! Sargob attacks with a power level of 1.", evilWizard.fight());
     }
 
 }

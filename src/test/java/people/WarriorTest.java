@@ -58,6 +58,6 @@ public class WarriorTest {
     @Test
         public void canFight() {
         warrior.setWeapon(joke);
-        assertEquals("I attack thee with a Joke. It has a power level of 4.", warrior.fight());
+        assertEquals("Chestnutella attacks with a Joke. It has a power level of 4.", warrior.fight());
     }
 }

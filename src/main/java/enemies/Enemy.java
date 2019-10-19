@@ -27,7 +27,7 @@ public abstract class Enemy implements IFight {
     }
 
     public String fight() {
-        return String.format("%s You've just been %s-ed with a power level of %s.", this.giveWarning(), this.getClassSimpleName(), this.getPower());
+        return String.format("%s %s attacks with a power level of %s.", this.giveWarning(), this.getName(), this.getPower());
     }
 
 }

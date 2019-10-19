@@ -30,12 +30,12 @@ public class HecklerTest {
 
     @Test
     public void canGiveWarning() {
-        assertEquals("Booo! You suck! I'm gonna make you wish you had stayed at home.", heckler.giveWarning());
+        assertEquals("Booo! You suck!", heckler.giveWarning());
     }
 
     @Test
     public void canFight() {
-        assertEquals("Booo! You suck! I'm gonna make you wish you had stayed at home. You've just been Heckler-ed with a power level of 2.", heckler.fight());
+        assertEquals("Booo! You suck! Schmuck attacks with a power level of 2.", heckler.fight());
     }
 
 }

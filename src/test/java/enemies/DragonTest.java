@@ -36,7 +36,7 @@ public class DragonTest {
 
     @Test
     public void canFight() {
-        assertEquals("ROAR! You've just been Dragon-ed with a power level of 5.", dragon.fight());
+        assertEquals("ROAR! Gordon attacks with a power level of 5.", dragon.fight());
     }
 
 }

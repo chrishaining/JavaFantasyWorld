@@ -49,6 +49,6 @@ public class EntertainerTest {
     @Test
     public void canFight() {
         entertainer.setWeapon(joke);
-        assertEquals("I attack thee with a Joke. It has a power level of 4.", entertainer.fight());
+        assertEquals("Flamboyo attacks with a Joke. It has a power level of 4.", entertainer.fight());
     }
 }

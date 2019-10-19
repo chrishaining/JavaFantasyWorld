@@ -50,7 +50,7 @@ public class WizardTest {
     @Test
     public void canFight() {
         wizard.setWeapon(joke);
-        assertEquals("I attack thee with a Joke. It has a power level of 4.", wizard.fight());
+        assertEquals("Symbolene attacks with a Joke. It has a power level of 4.", wizard.fight());
     }
 
 }

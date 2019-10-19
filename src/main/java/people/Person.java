@@ -39,7 +39,7 @@ public abstract class Person implements IFight {
     }
 
     public String fight() {
-        return String.format("I attack thee with a %s. It has a power level of %s.", this.getWeaponSimpleName(), this.getWeaponPower());
+        return String.format("%s attacks with a %s. It has a power level of %s.", this.getName(), this.getWeaponSimpleName(), this.getWeaponPower());
     }
 
 }

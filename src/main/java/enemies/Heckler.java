@@ -7,6 +7,6 @@ public class Heckler extends Enemy {
     }
 
     public String giveWarning() {
-        return "Booo! You suck! I'm gonna make you wish you had stayed at home.";
+        return "Booo! You suck!";
     }
 }
