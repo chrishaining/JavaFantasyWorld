@@ -1,9 +1,8 @@
-import items.Sword;
+package weapons;
+
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
-
-//package items;
 
 public class SwordTest {
 
@@ -17,11 +16,6 @@ public class SwordTest {
     @Test
     public void hasPower() {
         assertEquals(3, sword.getPower());
-    }
-
-    @Test
-    public void canGetType() {
-        assertEquals("Attack", sword.getType());
     }
 
 }
