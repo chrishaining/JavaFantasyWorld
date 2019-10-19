@@ -52,6 +52,9 @@ public class WarriorTest {
         assertEquals("Joke", warrior.getWeaponSimpleName());
     }
 
+
+    //can get simple name
+
     @Test
         public void canFight() {
         warrior.setWeapon(joke);

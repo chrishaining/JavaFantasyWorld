@@ -43,6 +43,10 @@ public class WizardTest {
         assertEquals(4, wizard.getWeaponPower());
     }
 
+    //can get simple name
+
+
+
     @Test
     public void canFight() {
         wizard.setWeapon(joke);

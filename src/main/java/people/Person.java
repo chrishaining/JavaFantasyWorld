@@ -30,6 +30,10 @@ public abstract class Person implements IFight {
         return this.weapon.getClass().getSimpleName();
     }
 
+    public String getClassSimpleName() {
+        return this.getClass().getSimpleName();
+    }
+
     public int getWeaponPower() {
         return this.weapon.getPower();
     }

@@ -44,6 +44,8 @@ public class EntertainerTest {
         assertEquals(4, entertainer.getWeaponPower());
     }
 
+    //can get simple name
+
     @Test
     public void canFight() {
         entertainer.setWeapon(joke);
