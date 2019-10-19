@@ -55,7 +55,7 @@ public class Game {
             return "It's a draw.";
         }
     }
-    
+
 }
 // there are different ways to do a fight.
 // one way is just to compare the power of each fighter.
