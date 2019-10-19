@@ -43,4 +43,10 @@ public class WizardTest {
         assertEquals(4, wizard.getWeaponPower());
     }
 
+    @Test
+    public void canFight() {
+        wizard.setWeapon(joke);
+        assertEquals("I attack thee with a Joke. It has a power level of 4.", wizard.fight());
+    }
+
 }

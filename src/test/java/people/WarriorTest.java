@@ -45,4 +45,16 @@ public class WarriorTest {
         warrior.setWeapon(joke);
         assertEquals(4, warrior.getWeaponPower());
     }
+
+    @Test
+    public void canShowWeaponSimpleName() {
+        warrior.setWeapon(joke);
+        assertEquals("Joke", warrior.getWeaponSimpleName());
+    }
+
+    @Test
+        public void canFight() {
+        warrior.setWeapon(joke);
+        assertEquals("I attack thee with a Joke. It has a power level of 4.", warrior.fight());
+    }
 }

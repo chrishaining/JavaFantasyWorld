@@ -26,8 +26,16 @@ public abstract class Person implements IFight {
         return weapon;
     }
 
+    public String getWeaponSimpleName() {
+        return this.weapon.getClass().getSimpleName();
+    }
+
     public int getWeaponPower() {
         return this.weapon.getPower();
+    }
+
+    public String fight() {
+        return String.format("I attack thee with a %s. It has a power level of %s.", this.getWeaponSimpleName(), this.getWeaponPower());
     }
 
 }

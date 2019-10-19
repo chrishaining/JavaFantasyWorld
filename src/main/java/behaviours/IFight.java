@@ -2,5 +2,5 @@ package behaviours;
 
 public interface IFight {
 
-//    public String attack();
+    public String fight();
 }
