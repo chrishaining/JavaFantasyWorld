@@ -84,8 +84,9 @@ public abstract class Person implements IAttack, IDefend, ILoseHealth {
                     return "Aaagh! I die, but I will come back to haunt thee!";
                 }
             }
-        } return "ooooo";
+        } return "You don't have any defence";
     }
+
 //        public void loseHealth(int damage) {
 //            this.health -= damage;
 //        }
