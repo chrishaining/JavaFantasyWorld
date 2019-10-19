@@ -11,13 +11,11 @@ public class Game {
     public Game() {
         this.players = new ArrayList<Person>();
         this.enemies = new ArrayList<Enemy>();
-
     }
 
     public int countPlayers() {
         return this.players.size();
     }
-
 
     public void addPlayer(Person player) {
         this.players.add(player);
