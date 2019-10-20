@@ -17,7 +17,6 @@ public abstract class Person implements IFight {
         return name;
     }
 
-    //setting the weapon means that we can add or replace an weapon. extension is to have an array of weapons.
     public void setWeapon(Weapon newWeapon) {
         this.weapon = newWeapon;
     }
