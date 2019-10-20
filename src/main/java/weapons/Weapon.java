@@ -14,4 +14,5 @@ public abstract class Weapon {
         return power;
     }
 
+    public abstract String getNoise();
 }

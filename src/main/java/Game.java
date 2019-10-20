@@ -7,7 +7,7 @@ import people.Entertainer;
 import people.Person;
 import people.Warrior;
 import people.Wizard;
-import weapons.Joke;
+import weapons.JokeBook;
 import weapons.MagicSpell;
 import weapons.Sword;
 
@@ -125,17 +125,25 @@ public class Game {
         Heckler enemy3;
         MagicSpell weapon1;
         Sword weapon2;
-        Joke weapon3;
+        JokeBook weapon3;
 
         player1 = new Wizard("Thelma");
         player2 = new Warrior("Louise");
         player3 = new Entertainer("Frankie Boyle");
         weapon1 = new MagicSpell(1);
         weapon2 = new Sword(5);
-        weapon3 = new Joke(3);
+        weapon3 = new JokeBook(3);
+
+
         player1.setWeapon(weapon1);
         player2.setWeapon(weapon2);
         player3.setWeapon(weapon3);
+
+        weapon3.addJoke("Why don’t pirates take a shower before they walk the plank?", " They just wash up on shore");
+        weapon3.addJoke("The machine at the coin factory just suddenly stopped working, with no explanation.", "It doesn’t make any cents");
+        weapon3.addJoke("Did you hear about the man who sued an airline company after it lost his luggage?", "Sadly, he lost his case" +
+                "");
+
         enemy1 = new EvilWizard("Agatha", 5);
         enemy2 = new Dragon("Fireball", 1);
         enemy3 = new Heckler("Jez", 3);
@@ -153,7 +161,7 @@ public class Game {
         System.out.println();
         System.out.println(this.runAFight(player2, enemy2));
         System.out.println();
-        System.out.println(this.runAFight(player3, enemy2));
+        System.out.println(this.runAFight(player3, enemy3));
 
         System.out.println("The surviving players are: ");
         for (Person person : this.players) {

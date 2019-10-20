@@ -2,7 +2,7 @@ package people;
 
 import org.junit.Before;
 import org.junit.Test;
-import weapons.Joke;
+import weapons.JokeBook;
 import weapons.Sword;
 
 import static org.junit.Assert.*;
@@ -11,13 +11,13 @@ public class WarriorTest {
 
     Warrior warrior;
     Sword sword;
-    Joke joke;
+    JokeBook jokeBook;
 
     @Before
     public void before() {
 
         sword = new Sword(3);
-        joke = new Joke(4);
+        jokeBook = new JokeBook(4);
         warrior = new Warrior("Chestnutella");
     }
 
@@ -36,20 +36,20 @@ public class WarriorTest {
     @Test
     public void canChangeWeapon() {
         warrior.setWeapon(sword);
-        warrior.setWeapon(joke);
-        assertEquals(joke, warrior.getWeapon());
+        warrior.setWeapon(jokeBook);
+        assertEquals(jokeBook, warrior.getWeapon());
     }
 
     @Test
     public void canAccessWeaponPower() {
-        warrior.setWeapon(joke);
+        warrior.setWeapon(jokeBook);
         assertEquals(4, warrior.getWeaponPower());
     }
 
     @Test
     public void canShowWeaponSimpleName() {
-        warrior.setWeapon(joke);
-        assertEquals("Joke", warrior.getWeaponSimpleName());
+        warrior.setWeapon(jokeBook);
+        assertEquals("JokeBook", warrior.getWeaponSimpleName());
     }
 
 
@@ -57,7 +57,7 @@ public class WarriorTest {
 
     @Test
         public void canFight() {
-        warrior.setWeapon(joke);
-        assertEquals("Chestnutella attacks with a Joke. It has a power level of 4.", warrior.fight());
+        warrior.setWeapon(jokeBook);
+        assertEquals("Chestnutella attacks with a JokeBook. It has a power level of 4.", warrior.fight());
     }
 }

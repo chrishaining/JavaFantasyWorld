@@ -2,7 +2,7 @@ package people;
 
 import org.junit.Before;
 import org.junit.Test;
-import weapons.Joke;
+import weapons.JokeBook;
 import weapons.Sword;
 
 import static org.junit.Assert.assertEquals;
@@ -11,13 +11,13 @@ public class EntertainerTest {
 
     Entertainer entertainer;
     Sword sword;
-    Joke joke;
+    JokeBook jokeBook;
 
     @Before
     public void before() {
         entertainer = new Entertainer("Flamboyo");
         sword = new Sword(3);
-        joke = new Joke(4);
+        jokeBook = new JokeBook(4);
     }
 
     @Test
@@ -34,13 +34,13 @@ public class EntertainerTest {
     @Test
     public void canChangeWeapon() {
         entertainer.setWeapon(sword);
-        entertainer.setWeapon(joke);
-        assertEquals(joke, entertainer.getWeapon());
+        entertainer.setWeapon(jokeBook);
+        assertEquals(jokeBook, entertainer.getWeapon());
     }
 
     @Test
     public void canAccessWeaponPower() {
-        entertainer.setWeapon(joke);
+        entertainer.setWeapon(jokeBook);
         assertEquals(4, entertainer.getWeaponPower());
     }
 
@@ -48,7 +48,7 @@ public class EntertainerTest {
 
     @Test
     public void canFight() {
-        entertainer.setWeapon(joke);
-        assertEquals("Flamboyo attacks with a Joke. It has a power level of 4.", entertainer.fight());
+        entertainer.setWeapon(jokeBook);
+        assertEquals("Flamboyo attacks with a JokeBook. It has a power level of 4.", entertainer.fight());
     }
 }

@@ -6,4 +6,8 @@ public class Sword extends Weapon {
         super(power);
     }
 
+
+    public String getNoise() {
+        return "Swish!";
+    }
 }

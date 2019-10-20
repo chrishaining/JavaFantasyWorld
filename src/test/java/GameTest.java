@@ -8,7 +8,7 @@ import people.Entertainer;
 import people.Person;
 import people.Warrior;
 import people.Wizard;
-import weapons.Joke;
+import weapons.JokeBook;
 import weapons.MagicSpell;
 import weapons.Sword;
 
@@ -26,7 +26,7 @@ public class GameTest {
     Heckler enemy3;
     MagicSpell weapon1;
     Sword weapon2;
-    Joke weapon3;
+    JokeBook weapon3;
 
     @Before
     public void before() {
@@ -36,7 +36,7 @@ public class GameTest {
         player3 = new Entertainer("Lady Gaga");
         weapon1 = new MagicSpell(1);
         weapon2 = new Sword(5);
-        weapon3 = new Joke(3);
+        weapon3 = new JokeBook(3);
         player1.setWeapon(weapon1);
         player2.setWeapon(weapon2);
         player3.setWeapon(weapon3);

@@ -1,6 +1,6 @@
 package people;
 
-import weapons.Joke;
+import weapons.JokeBook;
 import weapons.Sword;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,12 +10,12 @@ public class WizardTest {
 
     Wizard wizard;
     Sword sword;
-    Joke joke;
+    JokeBook jokeBook;
 
     @Before
     public void before() {
         sword = new Sword(3);
-        joke = new Joke(4);
+        jokeBook = new JokeBook(4);
         wizard = new Wizard("Symbolene");
     }
 
@@ -33,13 +33,13 @@ public class WizardTest {
     @Test
     public void canChangeWeapon() {
         wizard.setWeapon(sword);
-        wizard.setWeapon(joke);
-        assertEquals(joke, wizard.getWeapon());
+        wizard.setWeapon(jokeBook);
+        assertEquals(jokeBook, wizard.getWeapon());
     }
 
     @Test
     public void canAccessWeaponPower() {
-        wizard.setWeapon(joke);
+        wizard.setWeapon(jokeBook);
         assertEquals(4, wizard.getWeaponPower());
     }
 
@@ -49,8 +49,8 @@ public class WizardTest {
 
     @Test
     public void canFight() {
-        wizard.setWeapon(joke);
-        assertEquals("Symbolene attacks with a Joke. It has a power level of 4.", wizard.fight());
+        wizard.setWeapon(jokeBook);
+        assertEquals("Symbolene attacks with a JokeBook. It has a power level of 4.", wizard.fight());
     }
 
 }

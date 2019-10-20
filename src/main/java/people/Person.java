@@ -37,8 +37,12 @@ public abstract class Person implements IFight {
         return this.weapon.getPower();
     }
 
+    public String getWeaponNoise() {
+        return this.weapon.getNoise().toUpperCase();
+    }
+
     public String fight() {
-        return String.format("%s attacks with a %s. It has a power level of %s.", this.getName(), this.getWeaponSimpleName(), this.getWeaponPower());
+        return String.format("%s attacks with a %s. %s! It has a power level of %s.", this.getName(), this.getWeaponSimpleName(), this.getWeaponNoise(), this.getWeaponPower());
     }
 
 }
