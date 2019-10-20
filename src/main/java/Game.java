@@ -18,12 +18,12 @@ public class Game {
 
     private ArrayList<Person> players;
     private ArrayList<Enemy> enemies;
-    private ArrayList<IFight> fighters;
+    private ArrayList<IFight> finalists;
 
     public Game() {
         this.players = new ArrayList<Person>();
         this.enemies = new ArrayList<Enemy>();
-        this.fighters = new ArrayList<IFight>();
+        this.finalists = new ArrayList<IFight>();
 
     }
 
@@ -51,9 +51,13 @@ public class Game {
         this.enemies.remove(enemy);
     }
 
-    public void addFighter(IFight fighter) {this.fighters.add(fighter);}
+    public int countFinalists() {
+        return this.finalists.size();
+    }
 
-    public void removeFighter(IFight fighter) {this.fighters.remove(fighter);}
+    public void addFinalist(IFight finalist) {this.finalists.add(finalist);}
+
+    public void removeFinalist(IFight finalist) {this.finalists.remove(finalist);}
 
     public String runAFight(Person player, Enemy enemy) {
         System.out.println(String.format("%s fights %s...", player.getName(), enemy.getName()));
@@ -63,19 +67,52 @@ public class Game {
         int enemyScore = enemy.getPower();
         if (playerScore > enemyScore) {
             this.removeEnemy(enemy);
-            this.addFighter(player);
             return String.format("%s wins. %s the %s has been defeated.", player.getName(), enemy.getName(), enemy.getClassSimpleName());
         }
         else if (enemyScore > playerScore) {
             this.removePlayer(player);
-            this.addFighter(enemy);
             return String.format("%s the %s wins. %s has been killed.", enemy.getName(), enemy.getClassSimpleName(), player.getName());
         }
         else {
-            this.addFighter(player);
-            this.addFighter(enemy);
             return "It's a draw.";
 
+        }
+    }
+
+    public void murder() {
+        Random rand = new Random();
+        Person murderousPlayer = players.get(rand.nextInt(players.size()));
+        String murderousPlayerName = murderousPlayer.getName();
+        players.remove(murderousPlayer);
+        this.addFinalist(murderousPlayer);
+        String losingPlayerName = players.get(0).getName();
+        System.out.println(String.format("%s has murdered %s.", murderousPlayerName, losingPlayerName));
+
+        Random randTwo = new Random();
+        Enemy murderousEnemy = enemies.get(randTwo.nextInt(enemies.size()));
+        String murderousEnemyName = murderousEnemy.getName();
+        enemies.remove(murderousEnemy);
+        this.addFinalist(murderousEnemy);
+        String losingEnemyName = enemies.get(0).getName();
+        System.out.println(String.format("%s has murdered %s.", murderousEnemyName, losingEnemyName));
+
+        System.out.println();
+        System.out.println(String.format("That means the two remaining fighters are %s and %s.", murderousPlayerName, murderousEnemyName));
+    }
+
+    public void playFinal() {
+        System.out.println();
+        System.out.println("In a dramatic fight to the death, a victor has emerged ... ");
+
+        Random randThree = new Random();
+        IFight winner = finalists.get(randThree.nextInt(finalists.size()));
+        if (winner.getClass().getName().contains("enemies")) {
+            Enemy enemy = (Enemy) winner;
+            System.out.println(enemy.getName() + " takes the prize.");
+        }
+        else {
+            Person person = (Person) winner;
+            System.out.println(person.getName() + " takes the prize.");
         }
     }
 
@@ -129,46 +166,13 @@ public class Game {
             System.out.println(String.format("%s.", enemy.getName()));
         }
 
-        System.out.println("There's been a surprise development. The players have given up their allegiances and now they're all fighting for themselves. There have been sneak attacks. ");
+        System.out.println("\n");
+        System.out.println("The fighters are tired, and go to sleep for the night, ready for a new round of battles tomorrow. \n");
+        System.out.println("There's been a surprise development. During the night, two of the fighters have been murdered... ");
 
-        Random rand = new Random();
-
-        ArrayList<IFight> newList = new ArrayList<IFight>();
-        for (int i = 0; i < 2; i++) {
-
-
-            int randomIndex = rand.nextInt(players.size());
-
-            newList.add(fighters.get(randomIndex));
-
-            fighters.remove(randomIndex);
-        }
-
-        System.out.println();
-        System.out.println("The last two fighters standing are: ");
-        for (IFight fighter : newList) {
-            if (fighter.getClass().getName().contains("enemies")) {
-                Enemy enemy = (Enemy) fighter;
-                System.out.println(enemy.getName());
-            } else {
-                Person person = (Person) fighter;
-                System.out.println(person.getName());
-            }
-
-        }
-        System.out.println();
-        System.out.println("In a dramatic fight to the death, a victor has emerged ... ");
-
-        Random randTwo = new Random();
-        IFight winner = newList.get(randTwo.nextInt(newList.size()));
-        if (winner.getClass().getName().contains("enemies")) {
-            Enemy enemy = (Enemy) winner;
-            System.out.println(enemy.getName());
-        }
-        else {
-            Person person = (Person) winner;
-            System.out.println(person.getName());
-        }
+        this.murder();
+        this.playFinal();
+//
     }
 }
 
