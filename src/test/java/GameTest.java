@@ -109,10 +109,5 @@ public class GameTest {
         game.addEnemy(enemy3);
         assertEquals("It's a draw.", game.runAFight(player3, enemy3));
     }
-    //there is a winner (the last player standing) - unless they all get killed!
-    @Test
-    public void hasTwoFinalists() {
-        game.play();
-        assertEquals(2, game.countFinalists());
-    }
+    
 }
