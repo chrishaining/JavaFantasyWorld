@@ -129,6 +129,8 @@ public class Game {
 
         player1 = new Wizard("Thelma");
         player2 = new Warrior("Louise");
+
+
         player3 = new Entertainer("Frankie Boyle");
         weapon1 = new MagicSpell(1);
         weapon2 = new Sword(5);
@@ -163,6 +165,7 @@ public class Game {
         System.out.println();
         System.out.println(this.runAFight(player3, enemy3));
 
+        System.out.println();
         System.out.println("The surviving players are: ");
         for (Person person : this.players) {
             System.out.println(String.format("%s.", person.getName()));
